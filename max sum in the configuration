@@ -1,0 +1,25 @@
+int max_sum(int[]arr,int n){
+int sum=0;
+int s0=0;
+for(int i=0;i<n;i++){
+sum+=arr[i];
+s0=arr[i]*i;
+}
+int maxAns=s0;
+int si=s0;
+
+for(int i=0;i<n-1;i++){
+int Sip1=si+sum-n*arr[n-i-1];
+if(Sip1>maxAns){
+maxAns=Sip1;
+}
+si=Sip1;
+}
+return maxAns;
+}
+
+
+
+
+o(n)
+o(1)
